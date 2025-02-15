@@ -18,7 +18,15 @@ os.makedirs(download_dir, exist_ok=True)  # Ensure the directory exists
 bucket_name = "patotricks-bucket-example"
 
 def upload_file(file_name: str, bucket_name: str) -> None:
-    """Upload a file to an S3 bucket."""
+    """Upload a file to an S3 bucket.
+
+    Args:
+        file_name (str): The name of the file to upload.
+        bucket_name (str): The name of the S3 bucket to upload the file to.
+
+    Returns:
+        None
+    """
     file_path = os.path.join(original_files_dir, file_name)
     
     try:
@@ -29,7 +37,16 @@ def upload_file(file_name: str, bucket_name: str) -> None:
         print(f"❌ Error uploading '{file_path}': {e}")
 
 def download_file(file_name: str, bucket_name: str, new_file_name: str) -> None:
-    """Download a file from an S3 bucket and save it locally."""
+    """Download a file from an S3 bucket.
+
+    Args:
+        file_name (str): The name of the file to download.
+        bucket_name (str): The name of the S3 bucket to download the file from.
+        new_file_name (str): The name to save the downloaded file as.
+
+    Returns:
+        None
+    """
     download_path = os.path.join(download_dir, new_file_name)
 
     try:
